@@ -1,4 +1,4 @@
-# Handwritten Digit Recognition (MNIST) – .h5 + Flask
+# Handwritten Digit Recognition (MNIST) – Flask Deployment
 
 A complete, end-to-end project:
 - **01_EDA.ipynb** – quick data exploration
