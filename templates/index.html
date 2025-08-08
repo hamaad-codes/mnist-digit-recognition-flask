@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MNIST Digit Recognition</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Handwritten Digit Recognition</h1>
+      <p>Upload a PNG/JPG image of a single digit (0–9). The server will preprocess and predict it.</p>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">
+          {% for msg in messages %}<p>{{ msg }}</p>{% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <form method="post" enctype="multipart/form-data" class="card">
+      <input type="file" name="file" accept="image/png, image/jpeg" required />
+      <button type="submit">Predict Digit</button>
+    </form>
+
+    {% if uploaded_image %}
+      <section class="result card">
+        <div class="preview">
+          <img src="{{ uploaded_image }}" alt="Uploaded image" />
+        </div>
+        <div class="details">
+          <h2>Prediction</h2>
+          <p class="digit">Digit: <strong>{{ prediction }}</strong></p>
+          <p class="conf">Confidence: <strong>{{ confidence }}</strong></p>
+        </div>
+      </section>
+    {% endif %}
+
+    <footer>
+      <small>Flow: User → Upload → Server (Preprocess & Predict) → Result → Display</small>
+    </footer>
+  </div>
+</body>
+</html>

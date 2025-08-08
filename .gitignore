@@ -1,0 +1,51 @@
+# ==== Python caches ====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# ==== Virtual environment ====
+venv/
+.venv/
+
+# ==== Jupyter checkpoints ====
+.ipynb_checkpoints/
+
+# ==== OS-specific files ====
+.DS_Store
+Thumbs.db
+
+# ==== Model files ====
+models/
+*.h5
+*.keras
+*.pb
+*.pkl
+*.joblib
+
+# ==== Data files ====
+data/
+*.csv
+*.tsv
+
+# ==== Outputs / Logs ====
+outputs/
+*.log
+*.out
+*.tmp
+
+# ==== Environment secrets ====
+.env
+
+# ==== Uploaded files ====
+static/uploads/
+
+# ==== IDE / Editor configs ====
+.vscode/
+.idea/
+
+# ==== Build artifacts ====
+dist/
+build/
+*.egg-info/
